@@ -1,4 +1,4 @@
-# Dash-Multi-App Template
+# Dash Multi-App Template
 Create a custom Dash and Plot.ly template for building dashboards
 
 ##
