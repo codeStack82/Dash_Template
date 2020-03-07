@@ -1,6 +1,8 @@
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+
+
 #
 # def get_navbar():
 #     return dbc.NavbarSimple(
@@ -26,6 +28,7 @@ import dash_html_components as html
 
 
 def get_navbar():
+    # TODO: Build and save my own logo in assets folder
     PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
     search_bar = dbc.Row(
@@ -36,7 +39,7 @@ def get_navbar():
                 width="auto",
             ),
         ],
-        no_gutters=False,
+        no_gutters=True,
         className="ml-auto flex-nowrap mt-3 mt-md-0",
         align="center",
     )
@@ -47,8 +50,21 @@ def get_navbar():
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
-                        dbc.Col(dbc.NavbarBrand("Navbar", className="ml-2")),
+                        dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px", width="30px")),
+                        dbc.Col(dbc.NavbarBrand("Imperio", className="ml-2")),
+                        # TODO: Fix NavBar header navigation links
+                        # dbc.Col(dbc.DropdownMenu(
+                        #                 nav=True,
+                        #                 in_navbar=True,
+                        #                 label="Menu",
+                        #                 children=[
+                        #                     dbc.DropdownMenuItem(dcc.Link('App 1', href='/apps/app1')),
+                        #                     dbc.DropdownMenuItem(dcc.Link('App 2', href='/apps/app2')),
+                        #                     dbc.DropdownMenuItem(divider=True),
+                        #                     dbc.DropdownMenuItem(dcc.Link('Go Home', href='/apps/home')),
+                        #                 ],
+                        #             ),),
+
                     ],
                     align="center",
                     no_gutters=True,
@@ -60,4 +76,5 @@ def get_navbar():
         ],
         color="dark",
         dark=True,
+        sticky=True,
     )
