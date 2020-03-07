@@ -1,30 +1,5 @@
-import dash
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-from dash.dependencies import Input, Output
 import dash_html_components as html
-
-# navbar section
-navbar = dbc.NavbarSimple(
-    children=[
-        dbc.NavItem(dbc.NavLink("Link", href="#")),
-        dbc.DropdownMenu(
-            nav=True,
-            in_navbar=True,
-            label="Menu",
-            children=[
-                dbc.DropdownMenuItem(dcc.Link('App 1', href='/apps/app1')),
-                dbc.DropdownMenuItem(dcc.Link('App 2', href='/apps/app2')),
-                dbc.DropdownMenuItem(divider=True),
-                dbc.DropdownMenuItem(dcc.Link('Go Home', href='#')),
-            ],
-        ),
-    ],
-    brand="Ops-View Home",
-    brand_href="#",
-    # color='primary',
-    sticky="top",
-)
 
 # Form - email and password
 email_input = dbc.FormGroup([
@@ -51,7 +26,6 @@ password_input = dbc.FormGroup([
 
 form = dbc.Form([email_input, password_input])
 
-
 body = dbc.Container(
     [
 
@@ -72,7 +46,7 @@ body = dbc.Container(
     className="mt-10",
 )
 
-layout = html.Div([navbar, body])
+layout = html.Div([body])
 
 # --- Callbacks --- #
 # TODO: add login feature(s)
